@@ -1,0 +1,63 @@
+﻿<html>
+	</head>
+		<meta charset="UTF-8">
+		<title>폼태그 연습</title>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+		<style>
+		
+			.outer { 
+				margin-top: 10px;
+				background-color: blue;
+			}
+			
+			.outer > div {
+				width: 200px;
+				height: 200px;
+				background-color: #A6A6A6;
+				display: inline-block;
+				margin: 10px;
+				padding: 10px;
+				vertical-align: top; <!-- 세로 정렬 -->
+			}
+			
+			.outer > div > .date {
+				background-color: black;
+				color: white;
+				text-align: center;				
+			}
+			
+			.outer > div > .content {
+				background-color: #D5D5D5;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<script>			
+			function add() {
+				//$(".div").parent() -> 선택자의 부모태그를 반환한다.
+				//.children() -> 선택자의 자식태그들을 배열로 반환한다.
+				
+				$($(".outer").children()[$("#my_date").val()-1]).append("<div class='content'>"+$("#my_input ").val()+"</div>");
+			}
+			
+		</script>
+		<input type="text" id="my_date" placeholder="날짜"> 
+		<input type="text" id="my_input" placeholder="할 일"> 
+		
+		<button type="button" onclick="add();">추가</button>
+		<button type="button" onclick="del();">취소</button>
+		
+		<div class="outer" onclick="checkchildren(this);">
+			<div>
+				<div class="date">1</div>
+			</div> 
+			<div>
+				<div class="date">2</div>
+			</div>
+			<div>
+				<div class="date">3</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+{% load static %}
+<html>
+	<head></head>
+	<body>
+		<img src="{% static 'a.jpg' %}">
+		{% for user in users %}
+		<div>
+			<p>이름:{{user.username}}</p>
+			<p>아이디:{{user.useid}}</p>
+			<p>성별:{{user.gender}}</p>
+		</div>
+		{% endfor %}
+	</body>
+</html>

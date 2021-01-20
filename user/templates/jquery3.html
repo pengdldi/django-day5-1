@@ -1,0 +1,60 @@
+﻿<html>
+	</head>
+		<meta charset="UTF-8">
+		<title>jquery연습</title>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+		<style>
+			.my_class {
+				width: 200px;
+				height: 200px;
+				background-color: #A6A6A6;
+				display: inline-block;
+				margin: 10px;
+				padding: 10px;
+				vertical-align: top; <!-- 세로 정렬 -->
+			}
+			
+			.my_class > .date {
+				background-color: black;
+				color: white;
+				text-align: center;				
+			}
+			
+			.content {
+				background-color: #D5D5D5;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<script>			
+			/* function hello() {
+				alert($("#my_input").val());
+				//alert($("#my_div1").html());
+				//$("#my_input").val("크하하"); input에 어떤 내용을 써도 크하하로 바뀜
+			} */
+			
+		function add() {
+			$("#cal_"+$("#my_date").val()).append("<div class='content'>"+$("#my_input ").val()+"</div>");
+		}
+
+		</script>
+		<input type="text" id="my_date" placeholder="날짜"> 
+		<input type="text" id="my_input" placeholder="할 일"> 
+		
+		<button type="button" onclick="add();">추가</button>
+		<button type="button" onclick="del();">취소</button>
+		
+		<div class="outer">
+			<div id="cal_1" class="my_class">
+				<div class="date">1</div>
+			</div>
+			<div id="cal_2" class="my_class">
+				<div class="date">2</div>
+			</div>
+			<div id="cal_3" class="my_class">
+				<div class="date">3</div>
+			</div>
+		</div>
+	</body>
+</html>
