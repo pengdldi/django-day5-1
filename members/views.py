@@ -3,7 +3,7 @@ from django.http.response import HttpResponse
 from .models import Members
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello World")
+    return HttpResponse("version1")
 
 def test(request):
     return HttpResponse("<h2>Test Page</h2>")
