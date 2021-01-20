@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'user',
     'members',
     'lms',
-    'codingon'
+    'codingon',
+    'lottos'
 ]
 
 MIDDLEWARE = [

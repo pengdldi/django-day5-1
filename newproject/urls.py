@@ -20,5 +20,6 @@ urlpatterns = [
     path('cjwadmin/', admin.site.urls),
     path('user/', include('user.urls')),
     path('codingon/',include('codingon.urls')),
-    path('',include("members.urls"))
+    path('',include('members.urls')),
+    path('lottos/',include('lottos.urls'))
 ]
