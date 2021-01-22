@@ -21,5 +21,6 @@ urlpatterns = [
     path('user/', include('user.urls')),
     path('codingon/',include('codingon.urls')),
     path('',include('members.urls')),
-    path('lottos/',include('lottos.urls'))
+    path('lottos/',include('lottos.urls')),
+    path('novel/',include('novel.urls'))
 ]
