@@ -2,6 +2,25 @@ from django.shortcuts import render,redirect
 from django.http.response import HttpResponse
 from .models import User
 # Create your views here.
+def login(request):
+    if request.method == "POST":
+        userid = request.POST.get('userid')
+        password = request.POST.get('password')
+        data = {}
+        if not ( userid and password):
+            data['error'] = '모든 값을 입력해주세요.'
+            return render(request, 'login.html', data)
+        else:
+            user = User.objects.get(userid=userid)
+            if user.password == password:
+                request.session['user'] = userid
+                return redirect('main')
+            else:
+                data['error'] = '아이디 혹은 비밀번호가 틀립니다.'
+                return render(request, 'login.html', data)
+    else:
+        return render(request,'login.html')
+
 def register(request):
     if request.method == "POST" :
         userid = request.POST.get('userid')
